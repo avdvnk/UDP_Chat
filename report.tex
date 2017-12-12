@@ -1,0 +1,84 @@
+\documentclass{article}
+\usepackage[14pt]{extsizes} 
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{graphicx}
+\graphicspath{{pictures/}}
+\DeclareGraphicsExtensions{.pdf,.png,.jpg}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{float}
+\usepackage{indentfirst}
+\usepackage[left=2.5cm, right=1.5cm, vmargin=2.5cm]{geometry}
+
+\begin{document}
+
+  \begin{center}
+	   ГУАП\\
+	   КАФЕДРА № 51
+  \end{center}
+  \begin{center}
+\begin{tabular}{clcll}
+& & & & \\
+\multicolumn{1}{l}{ПРЕПОДАВАТЕЛЬ} & \multicolumn{1}{c}{} & & & \\ \cline{1-3}
+\multicolumn{1}{|c|}{доцент, к.т.н.} & \multicolumn{1}{l|}{} & \multicolumn{1}{c|}{Линский Е.М.} & & \\ \cline{1-3}
+\multicolumn{1}{|c|}{\begin{tabular}[c]{@{}c@{}}должность , уч. степень,\\ звание\end{tabular}} & \multicolumn{1}{c|}{подпись, дата} & \multicolumn{1}{c|}{инициалы, фамилия} &  &  \\ \cline{1-3}
+\end{tabular}
+\end{center}
+
+\vspace{5cm}
+
+  \begin{center}
+	ОТЧЕТ О ЛАБОРАТОРНОЙ РАБОТЕ № 11\\
+	СОЗДАНИЕ ПРОГРАММЫ НА ЯЗЫКЕ JAVA\\
+	\vspace{1cm}
+	по курсу: ТЕХНОЛОГИИ ПРОГРАММИРОВАНИЯ\\
+  \end{center}
+	
+	\vspace{4cm}
+	\begin{center}
+\begin{tabular}{cccll}
+& \multicolumn{1}{l}{} & & &  \\
+\multicolumn{1}{l}{РАБОТУ ВЫПОЛНИЛ} & & & &  \\ \cline{1-4}
+\multicolumn{1}{|c|}{СТУДЕНТ ГР. №} & \multicolumn{1}{c|}{5511} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{Вдовенко А.} & \\ \cline{1-4}
+\multicolumn{1}{|c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{подпись, дата} & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}инициалы,\\ фамилия\end{tabular}} &  \\ \cline{1-4}
+\end{tabular}
+\end{center}
+	\vspace{1cm}
+  \begin{center}
+	Санкт-Петербург 2017
+  \end{center}
+\thispagestyle{empty}
+\newpage
+	\textbf{Задание:}
+	\\Написать текстовый чат для двух пользователей на сокетах. Чат должен быть реализован по принципу клиент-сервер. Один пользователь находится на сервере, второй --- на клиенте. Адреса и порты задаются через командную строку: клиенту --- куда соединяться, серверу --- на каком порту слушать. При старте программы выводится текстовое приглашение, в котором можно ввести одну из следующих команд: \\
+	Задать имя пользователя (@name Vasya) \\
+	Послать текстовое сообщение (Hello) \\
+	Выход (@quit) \\
+	Принятые сообщения автоматически выводятся на экран. Программа работает по протоколу UDP.\\
+
+	
+	\textbf{Дополнительное задание:}
+	\\ Заменить серверную часть программы на бота, который загадывает число, а клиент отгадывает его дихотомией.\\
+	
+	
+	\textbf{Инструкция:}
+	\\Запуск основной части программы происходит в следующем порядке:
+		\begin{itemize}
+			\item {Запуск сервера, выбор порта для сервера.}
+			\item {Запуск клиента, ввод адреса сервера, ввод порта.}
+			\item {Ведение диалога. Использование команд смены имени и выхода.}
+		\end{itemize}
+	Запуск дополнительной части программы происходит также, как и основной части. Бот загадывает число, если клиент пришлет команду @startGame. Остановить угадывание числа возможно с помощью команды @stop.\\
+	
+	
+	\textbf{Тестирование:}
+	\begin{enumerate}
+		\item Используем команду @quit, программа клиента завершается
+		\item Используем команду @name Алексей. Сервер пришлет сообщение об успешной смене имени.
+		\item Используем команду @startGame, бот ответит сообщением о том, что он загадал число и настало время его угадать.
+		\item Во время игры пишем сообщения боту "Less than 50" или "More than 2". Бот отвечает на данные сообщения либо "Yes", либо "No".
+		\item Когда пользователь уверен, что знает число, то отправляет его боту. В случае правильного предположения бот ответит сообщением "You won!", в противном случае прийдет ответ "Try again". 
+	\end{enumerate}
+\end{document}
